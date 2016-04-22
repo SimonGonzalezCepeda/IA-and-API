@@ -157,7 +157,7 @@ abstract class Character
 
     // Setters
 
-
+    //TODO:Setters after child constructors.
 
     // Getters
 
