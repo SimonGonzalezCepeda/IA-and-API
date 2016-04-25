@@ -157,7 +157,221 @@ abstract class Character
 
     // Setters
 
-    //TODO:Setters after child constructors.
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @param string $surname
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+    }
+
+    /**
+     * @param string $aHangUP
+     */
+    public function setAHangUP($aHangUP)
+    {
+        $this->aHangUP = $aHangUP;
+    }
+
+    /**
+     * @param string $physique
+     */
+    public function setPhysique($physique)
+    {
+        $this->physique = $physique;
+    }
+
+    /**
+     * @param mixed $style
+     */
+    public function setStyle($style)
+    {
+        $this->style = $style;
+    }
+
+    /**
+     * @param mixed $defaultImage
+     */
+    public function setDefaultImage($defaultImage)
+    {
+        $this->defaultImage = $defaultImage;
+    }
+
+    /**
+     * @param array $poses
+     */
+    public function setPoses($poses)
+    {
+        $this->poses = $poses;
+    }
+
+    /**
+     * @param int $egoist
+     */
+    public function setEgoist($egoist)
+    {
+        $this->egoist = $egoist;
+    }
+
+    /**
+     * @param int $altruist
+     */
+    public function setAltruist($altruist)
+    {
+        $this->altruist = $altruist;
+    }
+
+    /**
+     * @param int $superficial
+     */
+    public function setSuperficial($superficial)
+    {
+        $this->superficial = $superficial;
+    }
+
+    /**
+     * @param int $romantic
+     */
+    public function setRomantic($romantic)
+    {
+        $this->romantic = $romantic;
+    }
+
+    /**
+     * @param int $sweet
+     */
+    public function setSweet($sweet)
+    {
+        $this->sweet = $sweet;
+    }
+
+    /**
+     * @param int $rude
+     */
+    public function setRude($rude)
+    {
+        $this->rude = $rude;
+    }
+
+    /**
+     * @param int $crazy
+     */
+    public function setCrazy($crazy)
+    {
+        $this->crazy = $crazy;
+    }
+
+    /**
+     * @param int $tranquil
+     */
+    public function setTranquil($tranquil)
+    {
+        $this->tranquil = $tranquil;
+    }
+
+    /**
+     * @param int $simple
+     */
+    public function setSimple($simple)
+    {
+        $this->simple = $simple;
+    }
+
+    /**
+     * @param int $complex
+     */
+    public function setComplex($complex)
+    {
+        $this->complex = $complex;
+    }
+
+    /**
+     * @param int $funny8boring
+     */
+    public function setFunny8boring($funny8boring)
+    {
+        $this->funny8boring = $funny8boring;
+    }
+
+    /**
+     * @param int $positive8negative
+     */
+    public function setPositive8negative($positive8negative)
+    {
+        $this->positive8negative = $positive8negative;
+    }
+
+    /**
+     * @param int $rich8poor
+     */
+    public function setRich8poor($rich8poor)
+    {
+        $this->rich8poor = $rich8poor;
+    }
+
+    /**
+     * @param int $comic
+     */
+    public function setComic($comic)
+    {
+        $this->comic = $comic;
+    }
+
+    /**
+     * @param int $intelligence
+     */
+    public function setIntelligence($intelligence)
+    {
+        $this->intelligence = $intelligence;
+    }
+
+    /**
+     * @param int $proud
+     */
+    public function setProud($proud)
+    {
+        $this->proud = $proud;
+    }
+
+    /**
+     * @param boolean $king
+     */
+    public function setKing($king)
+    {
+        $this->king = $king;
+    }
+
+    /**
+     * @param boolean $pawn
+     */
+    public function setPawn($pawn)
+    {
+        $this->pawn = $pawn;
+    }
+
+    /**
+     * @param float $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @param float $weight
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+    }
 
     // Getters
 

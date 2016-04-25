@@ -4,10 +4,24 @@
 namespace App;
 
 
+/**
+ * Class Player
+ * This class its unique for the player's character.
+ * @package App
+ */
 class Player extends Character
 {
+    /**
+     * Historical variable.
+     * @var
+     */
     private $lastGameSaved;
 
+    /**
+     * Current saved data
+     * Todo: We still need to desing the save game.
+     * @var
+     */
     private $save;
 
     /**
@@ -37,22 +51,6 @@ class Player extends Character
         $this->proud= 50;
         $this->king= true;
         $this->pawn= false;
-    }
-
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
-     * @param string $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->surname = $surname;
     }
 
 }
