@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Kawai
+class Kawai extends Character
 {
 
     /**

@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Sport
+class Sport extends Character
 {
 
     /**

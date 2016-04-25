@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Kakoi
+class Kakoi extends Character
 {
 
     /**

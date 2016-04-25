@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Funny
+class Funny extends Character
 {
 
     /**

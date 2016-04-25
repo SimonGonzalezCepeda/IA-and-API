@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Tsundere
+class Tsundere extends Character
 {
 
     /**
