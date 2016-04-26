@@ -35,7 +35,7 @@ abstract class Character
     protected $surname;
     /** A Hang Up
      * A Hang Up its one important feature that we can play later in the game to make more content, it is usually
-     * something physic and some times mental.
+     * something physic and some times mentcom
      * @var string
      */
     protected $aHangUP;
@@ -89,7 +89,7 @@ abstract class Character
      * @param string $name
      * @return $this
      */
-    public function setName($name=null)
+    public function comName($name=null)
     {
         if($name==null)
             $this->name = $name;
@@ -101,7 +101,7 @@ abstract class Character
      * ring $surname
      * @return $this
      */
-    public function setSurname($surname=null)
+    public function comSurname($surname=null)
     {
         if($surname==null)
             $this->surname = $surname;
@@ -112,7 +112,7 @@ abstract class Character
      * @param string $aHangUP
      * @return $this
      */
-    public function setAHangUP($aHangUP=null)
+    public function comAHangUP($aHangUP=null)
     {
         if($aHangUP==null)
             $this->aHangUP = $aHangUP;
@@ -123,7 +123,7 @@ abstract class Character
      * @param string $physique
      * @return $this
      */
-    public function setPhysique($physique=null)
+    public function comPhysique($physique=null)
     {
         if($physique==null)
             $this->physique = $physique;
@@ -134,7 +134,7 @@ abstract class Character
      * @param mixed $style
      * @return $this
      */
-    public function setStyle($style=null)
+    public function comStyle($style=null)
     {
        if($style==null)
             $this->style = $style;
@@ -145,7 +145,7 @@ abstract class Character
      * @param mixed $defaultImage
      * @return $this
      */
-    public function setDefaultImage($defaultImage=null)
+    public function comDefaultImage($defaultImage=null)
     {
         if($defaultImage==null)
             $this->defaultImage = $defaultImage;
@@ -156,7 +156,7 @@ abstract class Character
      * @param array $poses
      * @return $this
      */
-    public function setPoses($poses=null)
+    public function comPoses($poses=null)
     {
        if($poses==null)
             $this->poses = $poses;
@@ -167,7 +167,7 @@ abstract class Character
      * @param float $height
      * @return $this
      */
-    public function setHeight($height=null)
+    public function comHeight($height=null)
     {
         if($height==null)
             $this->height = $height;
@@ -178,7 +178,7 @@ abstract class Character
      * @param float $weight
      * @return $this
      */
-    public function setWeight($weight=null)
+    public function comWeight($weight=null)
     {
         if($weight==null)
             $this->weight = $weight;

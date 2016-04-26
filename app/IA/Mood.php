@@ -102,7 +102,7 @@ abstract class Mood
      * @param int $egoist
      * @return $this
      */
-    public function changeEgoist($egoist=null)
+    public function comEgoist($egoist=null)
     {
         if ($egoist==null)
             $this->egoist = $egoist;
@@ -113,7 +113,7 @@ abstract class Mood
      * @param int $altruist
      * @return $this
      */
-    public function setAltruist($altruist=null)
+    public function comAltruist($altruist=null)
     {
         if ($altruist==null)
             $this->altruist = $altruist;
@@ -124,7 +124,7 @@ abstract class Mood
      * @param int $superficial
      * @return $this
      */
-    public function setSuperficial($superficial=null)
+    public function comSuperficial($superficial=null)
     {
         if($superficial==null)
             $this->superficial = $superficial;
@@ -135,7 +135,7 @@ abstract class Mood
      * @param int $romantic
      * @return $this
      */
-    public function setRomantic($romantic=null)
+    public function comRomantic($romantic=null)
     {
         if($romantic==null)
             $this->romantic = $romantic;
@@ -146,7 +146,7 @@ abstract class Mood
      * @param int $sweet
      * @return $this
      */
-    public function setSweet($sweet=null)
+    public function comSweet($sweet=null)
     {
         if($sweet==null)
             $this->sweet = $sweet;
@@ -157,7 +157,7 @@ abstract class Mood
      * @param int $rude
      * @return $this
      */
-    public function setRude($rude=null)
+    public function comRude($rude=null)
     {
         if($rude==null)
             $this->rude = $rude;
@@ -168,7 +168,7 @@ abstract class Mood
      * @param int $crazy
      * @return $this
      */
-    public function setCrazy($crazy=null)
+    public function comCrazy($crazy=null)
     {
         if($crazy==null)
             $this->crazy = $crazy;
@@ -179,7 +179,7 @@ abstract class Mood
      * @param int $tranquil
      * @return $this
      */
-    public function setTranquil($tranquil=null)
+    public function comTranquil($tranquil=null)
     {
         if($tranquil==null)
             $this->tranquil = $tranquil;
@@ -190,7 +190,7 @@ abstract class Mood
      * @param int $simple
      * @return $this
      */
-    public function setSimple($simple=null)
+    public function comSimple($simple=null)
     {
         if($simple==null)
             $this->simple = $simple;
@@ -201,7 +201,7 @@ abstract class Mood
      * @param int $complex
      * @return $this
      */
-    public function setComplex($complex=null)
+    public function comComplex($complex=null)
     {
         if($complex==null)
             $this->complex = $complex;
@@ -212,7 +212,7 @@ abstract class Mood
      * @param int $funny8boring
      * @return $this
      */
-    public function setFunny8boring($funny8boring=null)
+    public function comFunny8boring($funny8boring=null)
     {
         if($funny8boring==null)
             $this->funny8boring = $funny8boring;
@@ -223,7 +223,7 @@ abstract class Mood
      * @param int $positive8negative
      * @return $this
      */
-    public function setPositive8negative($positive8negative=null)
+    public function comPositive8negative($positive8negative=null)
     {
         if($positive8negative==null)
             $this->positive8negative = $positive8negative;
@@ -234,7 +234,7 @@ abstract class Mood
      * @param int $rich8poor
      * @return $this
      */
-    public function setRich8poor($rich8poor=null)
+    public function comRich8poor($rich8poor=null)
     {
         if($rich8poor==null)
             $this->rich8poor = $rich8poor;
@@ -245,7 +245,7 @@ abstract class Mood
      * @param int $comic
      * @return $this
      */
-    public function setComic($comic=null)
+    public function comComic($comic=null)
     {
         if($comic==null)
             $this->comic = $comic;
@@ -256,7 +256,7 @@ abstract class Mood
      * @param int $intelligence
      * @return $this
      */
-    public function setIntelligence($intelligence=null)
+    public function comIntelligence($intelligence=null)
     {
         if($intelligence==null)
             $this->intelligence = $intelligence;
@@ -267,7 +267,7 @@ abstract class Mood
      * @param int $proud
      * @return $this
      */
-    public function setProud($proud=null)
+    public function comProud($proud=null)
     {
         if($proud==null)
             $this->proud = $proud;
@@ -278,7 +278,7 @@ abstract class Mood
      * @param boolean $king
      * @return $this
      */
-    public function setKing($king=null)
+    public function comKing($king=null)
     {
         if($king==null)
             $this->king = $king;
@@ -289,7 +289,7 @@ abstract class Mood
      * @param boolean $pawn
      * @return $this
      */
-    public function setPawn($pawn=null)
+    public function comPawn($pawn=null)
     {
         if($pawn==null)
             $this->pawn = $pawn;
