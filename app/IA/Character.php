@@ -61,8 +61,18 @@ abstract class Character
      * TODO: For this pre-Alpha it will be 4
      * @var array
      */
-    protected $poses;
-
+    protected $poses=[4];
+    /** King
+     * This will mark if this character its a King. Remember, Kings are characters associated with one or more
+     * characters.
+     * @var boolean
+     */
+    protected $king;
+    /** Pawn
+     * This will mark if the character follow a King.
+     * @var boolean
+     */
+    protected $pawn;
     /** Height
      * Height is needed for narrative and some events.
      * @var float
@@ -73,7 +83,6 @@ abstract class Character
      * @var float
      */
     protected $weight;
-
     /**
      * Character constructor.
      * @param Mood $mood
@@ -82,9 +91,7 @@ abstract class Character
     {
         $this->mood = $mood;
     }
-
     // Setters
-
     /**
      * @param string $name
      * @return $this
@@ -95,7 +102,6 @@ abstract class Character
             $this->name = $name;
         return $this;
     }
-
     /**
      * @param st
      * ring $surname
@@ -107,7 +113,6 @@ abstract class Character
             $this->surname = $surname;
         return $this;
     }
-
     /**
      * @param string $aHangUP
      * @return $this
@@ -118,7 +123,6 @@ abstract class Character
             $this->aHangUP = $aHangUP;
         return $this;
     }
-
     /**
      * @param string $physique
      * @return $this
@@ -129,7 +133,6 @@ abstract class Character
             $this->physique = $physique;
         return $this;
     }
-
     /**
      * @param mixed $style
      * @return $this
@@ -140,7 +143,6 @@ abstract class Character
             $this->style = $style;
         return $this;
     }
-
     /**
      * @param mixed $defaultImage
      * @return $this
@@ -151,7 +153,6 @@ abstract class Character
             $this->defaultImage = $defaultImage;
         return $this;
     }
-
     /**
      * @param array $poses
      * @return $this
@@ -162,7 +163,6 @@ abstract class Character
             $this->poses = $poses;
         return $this;
     }
-
     /**
      * @param float $height
      * @return $this
@@ -173,7 +173,6 @@ abstract class Character
             $this->height = $height;
         return $this;
     }
-
     /**
      * @param float $weight
      * @return $this
@@ -182,6 +181,26 @@ abstract class Character
     {
         if($weight==null)
             $this->weight = $weight;
+        return $this;
+    }
+    /**
+     * @param boolean $king
+     * @return $this
+     */
+    public function comKing($king=null)
+    {
+        if($king==null)
+            $this->king = $king;
+        return $this;
+    }
+    /**
+     * @param boolean $pawn
+     * @return $this
+     */
+    public function comPawn($pawn=null)
+    {
+        if($pawn==null)
+            $this->pawn = $pawn;
         return $this;
     }
 }

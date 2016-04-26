@@ -86,18 +86,6 @@ abstract class Mood
      * @var int
      */
     protected $proud;
-    /** King
-     * This will mark if this character its a King. Remember, Kings are characters associated with one or more
-     * characters.
-     * @var boolean
-     */
-    protected $king;
-    /** Pawn
-     * This will mark if the character follow a King.
-     * @var boolean
-     */
-    protected $pawn;
-
     /**
      * @param int $egoist
      * @return $this
@@ -108,7 +96,6 @@ abstract class Mood
             $this->egoist = $egoist;
         return $this;
     }
-
     /**
      * @param int $altruist
      * @return $this
@@ -119,7 +106,6 @@ abstract class Mood
             $this->altruist = $altruist;
         return $this;
     }
-
     /**
      * @param int $superficial
      * @return $this
@@ -130,7 +116,6 @@ abstract class Mood
             $this->superficial = $superficial;
         return $this;
     }
-
     /**
      * @param int $romantic
      * @return $this
@@ -141,7 +126,6 @@ abstract class Mood
             $this->romantic = $romantic;
         return $this;
     }
-
     /**
      * @param int $sweet
      * @return $this
@@ -152,7 +136,6 @@ abstract class Mood
             $this->sweet = $sweet;
         return $this;
     }
-
     /**
      * @param int $rude
      * @return $this
@@ -163,7 +146,6 @@ abstract class Mood
             $this->rude = $rude;
         return $this;
     }
-
     /**
      * @param int $crazy
      * @return $this
@@ -174,7 +156,6 @@ abstract class Mood
             $this->crazy = $crazy;
         return $this;
     }
-
     /**
      * @param int $tranquil
      * @return $this
@@ -185,7 +166,6 @@ abstract class Mood
             $this->tranquil = $tranquil;
         return $this;
     }
-
     /**
      * @param int $simple
      * @return $this
@@ -196,7 +176,6 @@ abstract class Mood
             $this->simple = $simple;
         return $this;
     }
-
     /**
      * @param int $complex
      * @return $this
@@ -207,7 +186,6 @@ abstract class Mood
             $this->complex = $complex;
         return $this;
     }
-
     /**
      * @param int $funny8boring
      * @return $this
@@ -218,7 +196,6 @@ abstract class Mood
             $this->funny8boring = $funny8boring;
         return $this;
     }
-
     /**
      * @param int $positive8negative
      * @return $this
@@ -229,7 +206,6 @@ abstract class Mood
             $this->positive8negative = $positive8negative;
         return $this;
     }
-
     /**
      * @param int $rich8poor
      * @return $this
@@ -240,7 +216,6 @@ abstract class Mood
             $this->rich8poor = $rich8poor;
         return $this;
     }
-
     /**
      * @param int $comic
      * @return $this
@@ -251,7 +226,6 @@ abstract class Mood
             $this->comic = $comic;
         return $this;
     }
-
     /**
      * @param int $intelligence
      * @return $this
@@ -262,7 +236,6 @@ abstract class Mood
             $this->intelligence = $intelligence;
         return $this;
     }
-
     /**
      * @param int $proud
      * @return $this
@@ -271,28 +244,6 @@ abstract class Mood
     {
         if($proud==null)
             $this->proud = $proud;
-        return $this;
-    }
-
-    /**
-     * @param boolean $king
-     * @return $this
-     */
-    public function comKing($king=null)
-    {
-        if($king==null)
-            $this->king = $king;
-        return $this;
-    }
-
-    /**
-     * @param boolean $pawn
-     * @return $this
-     */
-    public function comPawn($pawn=null)
-    {
-        if($pawn==null)
-            $this->pawn = $pawn;
         return $this;
     }
 }
