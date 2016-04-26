@@ -9,8 +9,17 @@ namespace App;
  * This class its used as a parent for all the others.
  * @package App
  */
+/**
+ * Class Character
+ * @package App
+ */
 abstract class Character
 {
+    /**
+     * @var Mood
+     * This will be used to load the atributes corresponding with the mood of a Character.
+     */
+    protected $mood;
     /** Name
      * This will be the name of the Character, it won't be able to be changed in the game by the user,
      * we must remember that in the game we don't use too often the name itself, it is reserved for a closed
@@ -53,97 +62,7 @@ abstract class Character
      * @var array
      */
     protected $poses;
-    /** Egoist
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $egoist;
-    /** Altruist
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $altruist;
-    /** Superficial
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $superficial;
-    /** Romantic
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $romantic;
-    /** Sweet
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $sweet;
-    /** Rude
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $rude;
-    /** Crazy
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $crazy;
-    /** Tranquil
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $tranquil;
-    /** Simple
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $simple;
-    /** Complex
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $complex;
-    /** Funny & Boring
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $funny8boring;
-    /** Positive & Negative
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 200.
-     * @var int
-     */
-    protected $positive8negative;
-    /** Rich & Poor
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 200.
-     * @var int
-     */
-    protected $rich8poor;
-    /** Complexed
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 200.
-     * @var int
-     */
-    protected $comic;
-    /** Intelligence
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $intelligence;
-    /** Proud
-     * This will be a measure to calculate compatibility with each character. Its measurable from 1 to 100.
-     * @var int
-     */
-    protected $proud;
-    /** King
-     * This will mark if this character its a King. Remember, Kings are characters associated with one or more
-     * characters.
-     * @var boolean
-     */
-    protected $king;
-    /** Pawn
-     * This will mark if the character follow a King.
-     * @var boolean
-     */
-    protected $pawn;
+
     /** Height
      * Height is needed for narrative and some events.
      * @var float
@@ -155,439 +74,114 @@ abstract class Character
      */
     protected $weight;
 
+    /**
+     * Character constructor.
+     * @param Mood $mood
+     */
+    public function __construct(Mood $mood)
+    {
+        $this->mood = $mood;
+    }
+
     // Setters
 
     /**
      * @param string $name
+     * @return $this
      */
-    public function setName($name)
+    public function setName($name=null)
     {
-        $this->name = $name;
+        if($name==null)
+            $this->name = $name;
+        return $this;
     }
 
     /**
-     * @param string $surname
+     * @param st
+     * ring $surname
+     * @return $this
      */
-    public function setSurname($surname)
+    public function setSurname($surname=null)
     {
-        $this->surname = $surname;
+        if($surname==null)
+            $this->surname = $surname;
+        return $this;
     }
 
     /**
      * @param string $aHangUP
+     * @return $this
      */
-    public function setAHangUP($aHangUP)
+    public function setAHangUP($aHangUP=null)
     {
-        $this->aHangUP = $aHangUP;
+        if($aHangUP==null)
+            $this->aHangUP = $aHangUP;
+        return $this;
     }
 
     /**
      * @param string $physique
+     * @return $this
      */
-    public function setPhysique($physique)
+    public function setPhysique($physique=null)
     {
-        $this->physique = $physique;
+        if($physique==null)
+            $this->physique = $physique;
+        return $this;
     }
 
     /**
      * @param mixed $style
+     * @return $this
      */
-    public function setStyle($style)
+    public function setStyle($style=null)
     {
-        $this->style = $style;
+       if($style==null)
+            $this->style = $style;
+        return $this;
     }
 
     /**
      * @param mixed $defaultImage
+     * @return $this
      */
-    public function setDefaultImage($defaultImage)
+    public function setDefaultImage($defaultImage=null)
     {
-        $this->defaultImage = $defaultImage;
+        if($defaultImage==null)
+            $this->defaultImage = $defaultImage;
+        return $this;
     }
 
     /**
      * @param array $poses
+     * @return $this
      */
-    public function setPoses($poses)
+    public function setPoses($poses=null)
     {
-        $this->poses = $poses;
-    }
-
-    /**
-     * @param int $egoist
-     */
-    public function setEgoist($egoist)
-    {
-        $this->egoist = $egoist;
-    }
-
-    /**
-     * @param int $altruist
-     */
-    public function setAltruist($altruist)
-    {
-        $this->altruist = $altruist;
-    }
-
-    /**
-     * @param int $superficial
-     */
-    public function setSuperficial($superficial)
-    {
-        $this->superficial = $superficial;
-    }
-
-    /**
-     * @param int $romantic
-     */
-    public function setRomantic($romantic)
-    {
-        $this->romantic = $romantic;
-    }
-
-    /**
-     * @param int $sweet
-     */
-    public function setSweet($sweet)
-    {
-        $this->sweet = $sweet;
-    }
-
-    /**
-     * @param int $rude
-     */
-    public function setRude($rude)
-    {
-        $this->rude = $rude;
-    }
-
-    /**
-     * @param int $crazy
-     */
-    public function setCrazy($crazy)
-    {
-        $this->crazy = $crazy;
-    }
-
-    /**
-     * @param int $tranquil
-     */
-    public function setTranquil($tranquil)
-    {
-        $this->tranquil = $tranquil;
-    }
-
-    /**
-     * @param int $simple
-     */
-    public function setSimple($simple)
-    {
-        $this->simple = $simple;
-    }
-
-    /**
-     * @param int $complex
-     */
-    public function setComplex($complex)
-    {
-        $this->complex = $complex;
-    }
-
-    /**
-     * @param int $funny8boring
-     */
-    public function setFunny8boring($funny8boring)
-    {
-        $this->funny8boring = $funny8boring;
-    }
-
-    /**
-     * @param int $positive8negative
-     */
-    public function setPositive8negative($positive8negative)
-    {
-        $this->positive8negative = $positive8negative;
-    }
-
-    /**
-     * @param int $rich8poor
-     */
-    public function setRich8poor($rich8poor)
-    {
-        $this->rich8poor = $rich8poor;
-    }
-
-    /**
-     * @param int $comic
-     */
-    public function setComic($comic)
-    {
-        $this->comic = $comic;
-    }
-
-    /**
-     * @param int $intelligence
-     */
-    public function setIntelligence($intelligence)
-    {
-        $this->intelligence = $intelligence;
-    }
-
-    /**
-     * @param int $proud
-     */
-    public function setProud($proud)
-    {
-        $this->proud = $proud;
-    }
-
-    /**
-     * @param boolean $king
-     */
-    public function setKing($king)
-    {
-        $this->king = $king;
-    }
-
-    /**
-     * @param boolean $pawn
-     */
-    public function setPawn($pawn)
-    {
-        $this->pawn = $pawn;
+       if($poses==null)
+            $this->poses = $poses;
+        return $this;
     }
 
     /**
      * @param float $height
+     * @return $this
      */
-    public function setHeight($height)
+    public function setHeight($height=null)
     {
-        $this->height = $height;
+        if($height==null)
+            $this->height = $height;
+        return $this;
     }
 
     /**
      * @param float $weight
+     * @return $this
      */
-    public function setWeight($weight)
+    public function setWeight($weight=null)
     {
-        $this->weight = $weight;
-    }
-
-    // Getters
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSurname()
-    {
-        return $this->surname;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAHangUP()
-    {
-        return $this->aHangUP;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPhysique()
-    {
-        return $this->physique;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStyle()
-    {
-        return $this->style;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDefaultImage()
-    {
-        return $this->defaultImage;
-    }
-
-    /**
-     * @return array
-     */
-    public function getPoses()
-    {
-        return $this->poses;
-    }
-
-    /**
-     * @return int
-     */
-    public function getEgoist()
-    {
-        return $this->egoist;
-    }
-
-    /**
-     * @return int
-     */
-    public function getAltruist()
-    {
-        return $this->altruist;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSuperficial()
-    {
-        return $this->superficial;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRomantic()
-    {
-        return $this->romantic;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSweet()
-    {
-        return $this->sweet;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRude()
-    {
-        return $this->rude;
-    }
-
-    /**
-     * @return int
-     */
-    public function getCrazy()
-    {
-        return $this->crazy;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTranquil()
-    {
-        return $this->tranquil;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSimple()
-    {
-        return $this->simple;
-    }
-
-    /**
-     * @return int
-     */
-    public function getComplex()
-    {
-        return $this->complex;
-    }
-
-    /**
-     * @return int
-     */
-    public function getFunny8boring()
-    {
-        return $this->funny8boring;
-    }
-
-    /**
-     * @return int
-     */
-    public function getPositive8negative()
-    {
-        return $this->positive8negative;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRich8poor()
-    {
-        return $this->rich8poor;
-    }
-
-    /**
-     * @return int
-     */
-    public function getComic()
-    {
-        return $this->comic;
-    }
-
-    /**
-     * @return int
-     */
-    public function getIntelligence()
-    {
-        return $this->intelligence;
-    }
-
-    /**
-     * @return int
-     */
-    public function getProud()
-    {
-        return $this->proud;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isKing()
-    {
-        return $this->king;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isPawn()
-    {
-        return $this->pawn;
-    }
-
-    /**
-     * @return float
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
-     * @return float
-     */
-    public function getWeight()
-    {
-        return $this->weight;
+        if($weight==null)
+            $this->weight = $weight;
+        return $this;
     }
 }
