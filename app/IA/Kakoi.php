@@ -12,21 +12,21 @@ class Kakoi extends Character
      */
     public function __construct()
     {
-        $this->egoist= 60;
-        $this->altruist= 35;
-        $this->superficial= 65;
-        $this->romantic= 60;
-        $this->sweet= 50;
-        $this->rude= 40;
-        $this->crazy= 50;
-        $this->tranquil= 60;
-        $this->simple= 50;
-        $this->complex= 50;
-        $this->funny8boring= 90;
-        $this->positive8negative= 110;
-        $this->rich8poor= 100;
-        $this->comic= 40;
-        $this->intelligence= 60;
-        $this->proud= 70;
+        $this->mood.$egoist= 60;
+        $this->mood.$altruist= 35;
+        $this->mood.$superficial= 65;
+        $this->mood.$romantic= 60;
+        $this->mood.$sweet= 50;
+        $this->mood.$rude= 40;
+        $this->mood.$crazy= 50;
+        $this->mood.$tranquil= 60;
+        $this->mood.$simple= 50;
+        $this->mood.$complex= 50;
+        $this->mood.$funny8boring= 90;
+        $this->mood.$positive8negative= 110;
+        $this->mood.$rich8poor= 100;
+        $this->mood.$comic= 40;
+        $this->mood.$intelligence= 60;
+        $this->mood.$proud= 70;
     }
 }

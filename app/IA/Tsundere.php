@@ -12,22 +12,22 @@ class Tsundere extends Character
      */
     public function __construct()
     {
-        $this->egoist= 50;
-        $this->altruist= 50;
-        $this->superficial= 50;
-        $this->romantic= 50;
-        $this->sweet= 50;
-        $this->rude= 50;
-        $this->crazy= 50;
-        $this->tranquil= 50;
-        $this->simple= 50;
-        $this->complex= 60;
-        $this->funny8boring= 100;
-        $this->positive8negative= 130;
-        $this->rich8poor= 100;
-        $this->comic= 50;
-        $this->intelligence= 50;
-        $this->proud= 50;
+        $this->mood.$egoist= 50;
+        $this->mood.$altruist= 50;
+        $this->mood.$superficial= 50;
+        $this->mood.$romantic= 50;
+        $this->mood.$sweet= 50;
+        $this->mood.$rude= 50;
+        $this->mood.$crazy= 50;
+        $this->mood.$tranquil= 50;
+        $this->mood.$simple= 50;
+        $this->mood.$complex= 60;
+        $this->mood.$funny8boring= 100;
+        $this->mood.$positive8negative= 130;
+        $this->mood.$rich8poor= 100;
+        $this->mood.$comic= 50;
+        $this->mood.$intelligence= 50;
+        $this->mood.$proud= 50;
     }
 
 

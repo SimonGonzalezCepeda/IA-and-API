@@ -12,21 +12,21 @@ class Sport extends Character
      */
     public function __construct()
     {
-        $this->egoist= 70;
-        $this->altruist= 55;
-        $this->superficial= 50;
-        $this->romantic= 30;
-        $this->sweet= 50;
-        $this->rude= 65;
-        $this->crazy= 60;
-        $this->tranquil= 40;
-        $this->simple= 80;
-        $this->complex= 20;
-        $this->funny8boring= 100;
-        $this->positive8negative= 70;
-        $this->rich8poor= 100;
-        $this->comic= 60;
-        $this->intelligence= 30;
-        $this->proud= 75;
+        $this->mood.$egoist= 70;
+        $this->mood.$altruist= 55;
+        $this->mood.$superficial= 50;
+        $this->mood.$romantic= 30;
+        $this->mood.$sweet= 50;
+        $this->mood.$rude= 65;
+        $this->mood.$crazy= 60;
+        $this->mood.$tranquil= 40;
+        $this->mood.$simple= 80;
+        $this->mood.$complex= 20;
+        $this->mood.$funny8boring= 100;
+        $this->mood.$positive8negative= 70;
+        $this->mood.$rich8poor= 100;
+        $this->mood.$comic= 60;
+        $this->mood.$intelligence= 30;
+        $this->mood.$proud= 75;
     }
 }

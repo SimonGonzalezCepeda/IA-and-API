@@ -12,22 +12,22 @@ class Nerd extends Character
      */
     public function __construct()
     {
-        $this->egoist= 60;
-        $this->altruist= 40;
-        $this->superficial= 45;
-        $this->romantic= 40;
-        $this->sweet= 30;
-        $this->rude= 60;
-        $this->crazy= 20;
-        $this->tranquil= 75;
-        $this->simple= 40;
-        $this->complex= 70;
-        $this->funny8boring= 125;
-        $this->positive8negative= 110;
-        $this->rich8poor= 100;
-        $this->comic= 20;
-        $this->intelligence= 80;
-        $this->proud= 70;
+        $this->mood.$egoist= 60;
+        $this->mood.$altruist= 40;
+        $this->mood.$superficial= 45;
+        $this->mood.$romantic= 40;
+        $this->mood.$sweet= 30;
+        $this->mood.$rude= 60;
+        $this->mood.$crazy= 20;
+        $this->mood.$tranquil= 75;
+        $this->mood.$simple= 40;
+        $this->mood.$complex= 70;
+        $this->mood.$funny8boring= 125;
+        $this->mood.$positive8negative= 110;
+        $this->mood.$rich8poor= 100;
+        $this->mood.$comic= 20;
+        $this->mood.$intelligence= 80;
+        $this->mood.$proud= 70;
     }
 
 
