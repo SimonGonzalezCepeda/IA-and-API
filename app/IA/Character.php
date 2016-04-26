@@ -62,17 +62,6 @@ abstract class Character
      * @var array
      */
     protected $poses=[4];
-    /** King
-     * This will mark if this character its a King. Remember, Kings are characters associated with one or more
-     * characters.
-     * @var boolean
-     */
-    protected $king;
-    /** Pawn
-     * This will mark if the character follow a King.
-     * @var boolean
-     */
-    protected $pawn;
     /** Height
      * Height is needed for narrative and some events.
      * @var float
@@ -98,7 +87,7 @@ abstract class Character
      */
     public function comName($name=null)
     {
-        if($name==null)
+        if($name===null)
             $this->name = $name;
         return $this;
     }
@@ -109,7 +98,7 @@ abstract class Character
      */
     public function comSurname($surname=null)
     {
-        if($surname==null)
+        if($surname===null)
             $this->surname = $surname;
         return $this;
     }
@@ -119,7 +108,7 @@ abstract class Character
      */
     public function comAHangUP($aHangUP=null)
     {
-        if($aHangUP==null)
+        if($aHangUP===null)
             $this->aHangUP = $aHangUP;
         return $this;
     }
@@ -129,7 +118,7 @@ abstract class Character
      */
     public function comPhysique($physique=null)
     {
-        if($physique==null)
+        if($physique===null)
             $this->physique = $physique;
         return $this;
     }
@@ -139,7 +128,7 @@ abstract class Character
      */
     public function comStyle($style=null)
     {
-       if($style==null)
+       if($style===null)
             $this->style = $style;
         return $this;
     }
@@ -181,26 +170,6 @@ abstract class Character
     {
         if($weight==null)
             $this->weight = $weight;
-        return $this;
-    }
-    /**
-     * @param boolean $king
-     * @return $this
-     */
-    public function comKing($king=null)
-    {
-        if($king==null)
-            $this->king = $king;
-        return $this;
-    }
-    /**
-     * @param boolean $pawn
-     * @return $this
-     */
-    public function comPawn($pawn=null)
-    {
-        if($pawn==null)
-            $this->pawn = $pawn;
         return $this;
     }
 }

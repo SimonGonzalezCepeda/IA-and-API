@@ -86,13 +86,24 @@ abstract class Mood
      * @var int
      */
     protected $proud;
+    /** King
+     * This will mark if this character its a King. Remember, Kings are characters associated with one or more
+     * characters.
+     * @var boolean
+     */
+    protected $king;
+    /** Pawn
+     * This will mark if the character follow a King.
+     * @var boolean
+     */
+    protected $pawn;
     /**
      * @param int $egoist
      * @return $this
      */
     public function comEgoist($egoist=null)
     {
-        if ($egoist==null)
+        if ($egoist===null)
             $this->egoist = $egoist;
         return $this;
     }
@@ -102,7 +113,7 @@ abstract class Mood
      */
     public function comAltruist($altruist=null)
     {
-        if ($altruist==null)
+        if ($altruist===null)
             $this->altruist = $altruist;
         return $this;
     }
@@ -112,7 +123,7 @@ abstract class Mood
      */
     public function comSuperficial($superficial=null)
     {
-        if($superficial==null)
+        if($superficial===null)
             $this->superficial = $superficial;
         return $this;
     }
@@ -122,7 +133,7 @@ abstract class Mood
      */
     public function comRomantic($romantic=null)
     {
-        if($romantic==null)
+        if($romantic===null)
             $this->romantic = $romantic;
         return $this;
     }
@@ -132,7 +143,7 @@ abstract class Mood
      */
     public function comSweet($sweet=null)
     {
-        if($sweet==null)
+        if($sweet===null)
             $this->sweet = $sweet;
         return $this;
     }
@@ -142,7 +153,7 @@ abstract class Mood
      */
     public function comRude($rude=null)
     {
-        if($rude==null)
+        if($rude===null)
             $this->rude = $rude;
         return $this;
     }
@@ -152,7 +163,7 @@ abstract class Mood
      */
     public function comCrazy($crazy=null)
     {
-        if($crazy==null)
+        if($crazy===null)
             $this->crazy = $crazy;
         return $this;
     }
@@ -162,7 +173,7 @@ abstract class Mood
      */
     public function comTranquil($tranquil=null)
     {
-        if($tranquil==null)
+        if($tranquil===null)
             $this->tranquil = $tranquil;
         return $this;
     }
@@ -172,7 +183,7 @@ abstract class Mood
      */
     public function comSimple($simple=null)
     {
-        if($simple==null)
+        if($simple===null)
             $this->simple = $simple;
         return $this;
     }
@@ -182,7 +193,7 @@ abstract class Mood
      */
     public function comComplex($complex=null)
     {
-        if($complex==null)
+        if($complex===null)
             $this->complex = $complex;
         return $this;
     }
@@ -192,7 +203,7 @@ abstract class Mood
      */
     public function comFunny8boring($funny8boring=null)
     {
-        if($funny8boring==null)
+        if($funny8boring===null)
             $this->funny8boring = $funny8boring;
         return $this;
     }
@@ -202,7 +213,7 @@ abstract class Mood
      */
     public function comPositive8negative($positive8negative=null)
     {
-        if($positive8negative==null)
+        if($positive8negative===null)
             $this->positive8negative = $positive8negative;
         return $this;
     }
@@ -212,7 +223,7 @@ abstract class Mood
      */
     public function comRich8poor($rich8poor=null)
     {
-        if($rich8poor==null)
+        if($rich8poor===null)
             $this->rich8poor = $rich8poor;
         return $this;
     }
@@ -222,7 +233,7 @@ abstract class Mood
      */
     public function comComic($comic=null)
     {
-        if($comic==null)
+        if($comic===null)
             $this->comic = $comic;
         return $this;
     }
@@ -232,7 +243,7 @@ abstract class Mood
      */
     public function comIntelligence($intelligence=null)
     {
-        if($intelligence==null)
+        if($intelligence===null)
             $this->intelligence = $intelligence;
         return $this;
     }
@@ -242,8 +253,28 @@ abstract class Mood
      */
     public function comProud($proud=null)
     {
-        if($proud==null)
+        if($proud===null)
             $this->proud = $proud;
+        return $this;
+    }
+    /**
+     * @param boolean $king
+     * @return $this
+     */
+    public function comKing($king=null)
+    {
+        if($king==null)
+            $this->king = $king;
+        return $this;
+    }
+    /**
+     * @param boolean $pawn
+     * @return $this
+     */
+    public function comPawn($pawn=null)
+    {
+        if($pawn==null)
+            $this->pawn = $pawn;
         return $this;
     }
 }

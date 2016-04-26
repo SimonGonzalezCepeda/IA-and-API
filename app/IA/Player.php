@@ -6,7 +6,7 @@ namespace App;
 
 /**
  * Class Player
- * This class its unique for the player's character.
+ * This class its unique for the player's character.mood.$
  * @package App
  */
 class Player extends Character
@@ -30,27 +30,27 @@ class Player extends Character
      */
     public function __construct()
     {
-        $this->aHangUP = "none";
-        $this->physique = "normal";
-        $this->style= "none";
-        $this->egoist= 50;
-        $this->altruist= 50;
-        $this->superficial= 50;
-        $this->romantic= 50;
-        $this->sweet= 50;
-        $this->rude= 50;
-        $this->crazy= 50;
-        $this->tranquil=50;
-        $this->simple= 50;
-        $this->complex= 50;
-        $this->funny8boring= 100;
-        $this->positive8negative= 100;
-        $this->rich8poor= 100;
-        $this->comic= 50;
-        $this->intelligence= 50;
-        $this->proud= 50;
-        $this->king= true;
-        $this->pawn= false;
+        $this->mood.$aHangUP = "none";
+        $this->mood.$physique = "normal";
+        $this->mood.$style= "none";
+        $this->mood.$egoist= 50;
+        $this->mood.$altruist= 50;
+        $this->mood.$superficial= 50;
+        $this->mood.$romantic= 50;
+        $this->mood.$sweet= 50;
+        $this->mood.$rude= 50;
+        $this->mood.$crazy= 50;
+        $this->mood.$tranquil=50;
+        $this->mood.$simple= 50;
+        $this->mood.$complex= 50;
+        $this->mood.$funny8boring= 100;
+        $this->mood.$positive8negative= 100;
+        $this->mood.$rich8poor= 100;
+        $this->mood.$comic= 50;
+        $this->mood.$intelligence= 50;
+        $this->mood.$proud= 50;
+        $this->mood.$king= true;
+        $this->mood.$pawn= false;
     }
 
 }
