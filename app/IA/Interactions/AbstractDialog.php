@@ -4,6 +4,10 @@
 namespace App;
 
 
+/**
+ * Class AbstractDialog
+ * @package App
+ */
 class AbstractDialog implements Dialogs
 {
     /**
@@ -53,13 +57,37 @@ class AbstractDialog implements Dialogs
         return $this;
     }
 
-    public function start()
+    /**
+     * @param $condition
+     * @return boolean
+     */
+    public function start($condition)
     {
         // TODO: Implement start() method.
     }
 
-    public function end()
+    /**
+     * @param null $condition
+     * @return boolean
+     */
+    public function end($condition = null)
     {
         // TODO: Implement end() method.
+    }
+
+    /**
+     * @param $choices
+     */
+    public function interaction($choices)
+    {
+        // TODO: Implement interaction() method.
+    }
+
+    /**
+     * @return mixes
+     */
+    public function results()
+    {
+        // TODO: Implement results() method.
     }
 }

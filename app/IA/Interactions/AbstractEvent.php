@@ -6,6 +6,15 @@ namespace App;
 
 class AbstractEvent implements Events
 {
+    protected $conversation;
+    /**
+     * AbstractEvent constructor.
+     * @param Conversation $conversation
+     */
+    public function __construct(Conversation $conversation)
+    {
+        $this->conversation = $conversation;
+    }
 
     /**
      * @param $condition
@@ -17,19 +26,21 @@ class AbstractEvent implements Events
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
     public function start()
     {
         // TODO: Implement start() method.
+        return false;
     }
 
     /**
-     * @return mixed
+     * @return boolean
      */
     public function end()
     {
         // TODO: Implement end() method.
+        return false;
     }
 
     /**

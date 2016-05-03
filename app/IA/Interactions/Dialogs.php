@@ -11,11 +11,18 @@ namespace App;
 interface Dialogs
 {
     /**
-     * @return mixed
+     * @param $condition
+     * @return boolean
      */
-    public function start();
+    public function start($condition);
+
     /**
-     * @return mixed
+     * @param null $condition
+     * @return boolean
      */
-    public function end();
+    public function end($condition=null);
+
+    public function interaction($choices);
+
+    public function results();
 }

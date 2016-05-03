@@ -17,11 +17,11 @@ interface Events
      */
     public function listener($condition);
     /**
-     * @return mixed
+     * @return boolean
      */
     public function start();
     /**
-     * @return mixed
+     * @return boolean
      */
     public function end();
     /**
