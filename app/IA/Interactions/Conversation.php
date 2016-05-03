@@ -47,6 +47,10 @@ class Conversation
     public function start($condition)
     {
         //TODO: Implement start().
+        if($condition)
+            return true;
+        else
+            return false;
     }
 
     /**
@@ -55,6 +59,9 @@ class Conversation
      */
     public function end($condition=null)
     {
-        //TODO: Implement end()
+        if ($condition)
+            return true;
+        else
+            return false;
     }
 }

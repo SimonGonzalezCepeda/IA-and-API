@@ -8,6 +8,10 @@ namespace App;
  * Class AbstractDialog
  * @package App
  */
+/**
+ * Class AbstractDialog
+ * @package App
+ */
 class AbstractDialog implements Dialog
 {
     /**
@@ -22,9 +26,34 @@ class AbstractDialog implements Dialog
      * @var Character
      */
     protected $commentators = [];
-
+    /**
+     * Used to controls and maybe a trophy system in the future.
+     * @var bool
+     */
+    protected $endFlag = false;
+    /**
+     * Used to controls and maybe a trophy system in the future.
+     * @var bool
+     */
+    protected $startedFlag = false;
+    /**
+     * This will be the file that will be loaded.
+     * @var
+     */
     protected $content;
 
+    /**
+     * AbstractDialog constructor.
+     * @param Character $receiver
+     * @param Character $transmiter
+     * @param $content
+     */
+    public function __construct(Character $receiver, Character $transmiter, $content)
+    {
+        $this->receiver = $receiver;
+        $this->transmiter = $transmiter;
+        $this->content = $content;
+    }
     /**
      * @param Character $transmiter
      * @return $this
@@ -58,25 +87,6 @@ class AbstractDialog implements Dialog
         }
         return $this;
     }
-
-    /**
-     * @param $condition
-     * @return boolean
-     */
-    public function start($condition)
-    {
-        // TODO: Implement start() method.
-    }
-
-    /**
-     * @param null $condition
-     * @return boolean
-     */
-    public function end($condition = null)
-    {
-        // TODO: Implement end() method.
-    }
-
     /**
      * @param array $choices
      */
@@ -84,12 +94,37 @@ class AbstractDialog implements Dialog
     {
         // TODO: Implement interaction() method.
     }
-
     /**
      * @return mixes
      */
     public function results()
     {
         // TODO: Implement results() method.
+    }
+
+    /**
+     *  A method to indicate that its over the dialeg.
+     */
+    public function end()
+    {
+        $this->endFlag = true;
+    }
+
+    /**
+     *  A method to indicate that the dialeg started,
+     */
+    public function start()
+    {
+        $this->startedFlag = true;
+    }
+
+    /**
+     *  A method called to save the current point on the dialeg. Maybe refaction sooner.
+     */
+    public function memorizeLine()
+    {
+        if($this->startedFlag){
+            //TODO: Codi per a desar el dialog que portem llegit.
+        }
     }
 }
