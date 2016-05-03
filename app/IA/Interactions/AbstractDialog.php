@@ -8,20 +8,22 @@ namespace App;
  * Class AbstractDialog
  * @package App
  */
-class AbstractDialog implements Dialogs
+class AbstractDialog implements Dialog
 {
     /**
      * @var Character
      */
-    private $transmiter;
+    protected $transmiter;
     /**
      * @var Character
      */
-    private $receiver;
+    protected $receiver;
     /**
      * @var Character
      */
-    private $commentators = [];
+    protected $commentators = [];
+
+    protected $content;
 
     /**
      * @param Character $transmiter
@@ -76,7 +78,7 @@ class AbstractDialog implements Dialogs
     }
 
     /**
-     * @param $choices
+     * @param array $choices
      */
     public function interaction($choices)
     {

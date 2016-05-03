@@ -11,11 +11,11 @@ class Conversation
 
     /**
      * Conversation constructor.
-     * @param Dialogs $dialog
+     * @param Dialog $dialog
      * @param string $topic
      * @internal param Dialogs $dialogs
      */
-    public function __construct(Dialogs $dialog, $topic)
+    public function __construct(Dialog $dialog, $topic)
     {
         if ($topic === null || $topic == null)
             $topic = "Default Topic";
@@ -24,7 +24,7 @@ class Conversation
     }
 
     /**
-     * @return Dialogs
+     * @return Dialog
      */
     public function getDialogs()
     {
@@ -32,12 +32,29 @@ class Conversation
     }
 
     /**
-     * @param Dialogs $dialog
+     * @param Dialog $dialog
      * @internal param array $dialogs
      */
-    public function setDialogs(Dialogs $dialog)
+    public function setDialogs(Dialog $dialog)
     {
         $this->dialogs = $dialog;
     }
 
+    /**
+     * @param $condition
+     * @return boolean
+     */
+    public function start($condition)
+    {
+        //TODO: Implement start().
+    }
+
+    /**
+     * @param null $condition
+     * @return boolean
+     */
+    public function end($condition=null)
+    {
+        //TODO: Implement end()
+    }
 }
