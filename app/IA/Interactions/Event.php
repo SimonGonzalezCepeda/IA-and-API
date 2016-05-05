@@ -12,18 +12,25 @@ namespace App;
 interface Events
 {
     /**
-     * @param $condition
+     * @param Condition $condition
      * @return mixed
      */
-    public function listener($condition);
+    public function listener(Condition $condition);
+
     /**
-     * @return boolean
+     * @param Conversation $conversation
+     * @return void
      */
-    public function start();
+    public function start(Conversation $conversation);
+
     /**
-     * @return boolean
+     * This function has meant to end two type of events, one that is general and
+     * the other not. General events end with a condition of time (in most cases)
+     * And the others are just
+     * @param $condition
+     * @return
      */
-    public function end();
+    public function end(Condition $condition = null);
     /**
      * @return mixed
      */
