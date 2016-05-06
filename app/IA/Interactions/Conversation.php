@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Conversation
+class Conversation extends GameEvent
 {
     private $dialogs = [];
     private $topic;
@@ -37,31 +37,7 @@ class Conversation
      */
     public function setDialogs(Dialog $dialog)
     {
-        $this->dialogs = $dialog;
+        $this->dialogs = [$dialog];
     }
 
-    /**
-     * @param $condition
-     * @return boolean
-     */
-    public function start($condition)
-    {
-        //TODO: Implement start().
-        if($condition)
-            return true;
-        else
-            return false;
-    }
-
-    /**
-     * @param null $condition
-     * @return boolean
-     */
-    public function end($condition=null)
-    {
-        if ($condition)
-            return true;
-        else
-            return false;
-    }
 }

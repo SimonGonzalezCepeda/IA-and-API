@@ -18,10 +18,9 @@ interface Events
     public function listener(Condition $condition);
 
     /**
-     * @param Conversation $conversation
-     * @return void
+     * @param Startable $startable
      */
-    public function start(Conversation $conversation);
+    public function start(Startable $startable);
 
     /**
      * This function has meant to end two type of events, one that is general and

@@ -8,7 +8,7 @@ namespace App;
  * Class Condition
  * @package App
  */
-class Condition
+class Condition implements Startable
 {
     /**
      * This variable can be almost any parameter of the game, it could be the day, a week
@@ -17,10 +17,10 @@ class Condition
      */
     private $condition;
     /**
-     * This is the actual value that you will ask for it to something to start() or to end($condition).
-     * Remember that start() and end($condition) function its in almost every "event"
-     * (it can be a dialog, a conversation or an actual event) that has a
-     * listener.
+     * This is the actual value that you will ask for it to something to start()
+     * or to end($condition). Remember that start() and end($condition) function
+     * its in almost every "event" (it can be a dialog, a conversation or an
+     * actual event) that has a listener.
      * @var
      */
     private $value;
@@ -36,5 +36,21 @@ class Condition
     public function Multiple()
     {
         $this->condition = [];
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCondition()
+    {
+        return $this->condition;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 }
