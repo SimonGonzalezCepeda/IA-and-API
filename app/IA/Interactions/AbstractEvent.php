@@ -8,6 +8,9 @@ abstract class AbstractEvent implements Events
 {
     protected $startFlag = false;
     protected $endFlag = false;
+    /**
+     * @var Conversation
+     */
     protected $conversations;
     /**
      * AbstractEvent constructor.
@@ -31,19 +34,43 @@ abstract class AbstractEvent implements Events
         if($this->itsOnGoing()) {
             $this->end($condition);
         } else {
-            if($condition->getCondition() == $condition->getValue())
+            if($this->checkCondition($condition))
                 $this->start($this->conversations);
         }
+    }
+
+    /**
+     * Function to check conditions.
+     * @param Condition $condition
+     * @return bool
+     */
+    private function checkCondition(Condition $condition)
+    {
+        if($condition->getCondition() == $condition->getValue())
+            return true;
+        return false;
     }
 
     /**
      * Getter that checks if the game started and not finished.
      * @return bool
      */
-    private function itsOnGoing()
+    public function itsOnGoing()
     {
         if(!$this->endFlag)
             return $this->startFlag;
+        return false;
+    }
+
+    /**
+     * Getter that checks if the game has ended.
+     * @return bool
+     */
+    public function itsDone()
+    {
+        if(!$this->startFlag)
+            return $this->endFlag;
+        return false;
     }
 
     /**
@@ -57,17 +84,24 @@ abstract class AbstractEvent implements Events
     }
 
     /**
+     * To avoid conflicts, we set the startFlag as false.
      * @param $condition
+     * @return $this
      */
     public function end(Condition $condition = null)
     {
         //TODO: Not finished
         if($condition === null) {
             $this->endFlag = true;
-        } else {
-            if($condition->getCondition() == $condition->getValue())
-                $this->endFlag = true;
+            $this->startFlag = false;
+            return $this;
         }
+        if($this->checkCondition($condition)) {
+            $this->endFlag = true;
+            $this->startFlag = false;
+            return $this;
+        }
+
     }
 
     /**
