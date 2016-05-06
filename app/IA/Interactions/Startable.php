@@ -9,6 +9,11 @@
 namespace App;
 
 
+/**
+ * This is an interface to make some objects be able to start a function.
+ * Interface Startable
+ * @package App
+ */
 interface Startable
 {
 
