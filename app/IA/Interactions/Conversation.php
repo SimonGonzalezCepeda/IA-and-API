@@ -4,7 +4,7 @@
 namespace App;
 
 
-class Conversation extends GameEvent
+class Conversation extends GameEvent implements Startable
 {
     private $dialogs = [];
     private $topic;
