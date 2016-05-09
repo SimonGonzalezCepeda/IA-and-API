@@ -30,8 +30,14 @@ interface Events
      * @return
      */
     public function end(Condition $condition = null);
+
     /**
+     * This function has the responsability to aplied the changes of every result in
+     * the current game.
+     * @param Character $character
+     * @param $parameter
+     * @param $value
      * @return mixed
      */
-    public function result();
+    public function result($character, $parameter, $value);
 }

@@ -81,6 +81,17 @@ abstract class Character
         $this->mood = $mood;
     }
     // Setters
+
+    public function comParameter($parameter, $value)
+    {
+        $function = ("com" + $parameter + "(" + $value + ");");
+        if(is_callable($function)){
+            $this->$function();
+            return true;
+        }
+        return false;
+    }
+
     /**
      * @param string $name
      * @return $this

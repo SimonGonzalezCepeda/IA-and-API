@@ -90,14 +90,13 @@ abstract class GameEvent implements Events
     }
 
     /**
-     * This function permet to end an Event with or without a condition. If it has a condition
+     * This function permit to end an Event with or without a condition. If it has a condition
      * it will check it, if not the event will be set finished.
      * @param $condition
      * @return $this
      */
     public function end(Condition $condition = null)
     {
-        //TODO: Not finished
         if($condition === null) {
             $this->endIt();
         }
@@ -118,10 +117,17 @@ abstract class GameEvent implements Events
     }
 
     /**
+     * This function has the responsability to aplied the changes of every result in
+     * the current game.
+     * @param Character $character
+     * @param $parameter
+     * @param $value
      * @return mixed
      */
-    public function result()
+    public function result($character, $parameter, $value)
     {
         // TODO: Implement result() method.
+        $character->comParameter($parameter, $value);
+
     }
 }
