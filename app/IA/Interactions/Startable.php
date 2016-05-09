@@ -10,7 +10,7 @@ namespace App;
 
 
 /**
- * This is an interface to make some objects be able to start a function.
+ * This is an interface to make some objects be able to start a function. It's empty.
  * Interface Startable
  * @package App
  */

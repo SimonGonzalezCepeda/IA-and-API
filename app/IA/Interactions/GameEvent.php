@@ -4,10 +4,27 @@
 namespace App;
 
 
-class GameEvent implements Events
+/**This class its meant to put tha basses of all kind of events in the game, they could be
+ * Events inside the GAME or triggers and other actions that are events inside the CODE.
+ * Class GameEvent
+ * @package App
+ */
+abstract class GameEvent implements Events
 {
+    /**This variable mark if the game has been started.
+     * @var bool
+     */
     protected $startFlag = false;
+    /**This variable mark if the events has been completed.
+     * @var bool
+     */
     protected $endFlag = false;
+    /**
+     * This variable its meant to be used by any class that implements Startable. This
+     * let us the posibility to use it for a condition or to call something from the start method.
+     * @var Startable
+     */
+    protected $startable;
     /**
      * We listen if a condition has been acomplished. If the event its on going,
      * we will call end($condition) function in order to see if it ends. If not
@@ -23,9 +40,10 @@ class GameEvent implements Events
             return $this;
         }
         if($this->checkCondition($condition)) {
-            $this->start($this->conversations);
+            $this->start($this->startable);
             return $this;
         }
+        return null;
     }
 
     /**
@@ -41,7 +59,7 @@ class GameEvent implements Events
     }
 
     /**
-     * Getter that checks if the game started and not finished.
+     * Getter that checks if the game started and is not finished.
      * @return bool
      */
     public function itsOnGoing()
@@ -72,7 +90,8 @@ class GameEvent implements Events
     }
 
     /**
-     * To avoid conflicts, we set the startFlag as false.
+     * This function permet to end an Event with or without a condition. If it has a condition
+     * it will check it, if not the event will be set finished.
      * @param $condition
      * @return $this
      */
@@ -80,16 +99,22 @@ class GameEvent implements Events
     {
         //TODO: Not finished
         if($condition === null) {
-            $this->endFlag = true;
-            $this->startFlag = false;
-            return $this;
+            $this->endIt();
         }
         if($this->checkCondition($condition)) {
-            $this->endFlag = true;
-            $this->startFlag = false;
-            return $this;
+            $this->endIt();
         }
         return null;
+    }
+
+    /**
+     * This function its meant only to end the event.
+     * @return $this
+     */
+    private function endIt(){
+        $this->endFlag = true;
+        $this->startFlag = false;
+        return $this;
     }
 
     /**
