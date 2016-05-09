@@ -12,7 +12,7 @@ namespace App;
  * Class AbstractDialog
  * @package App
  */
-class AbstractDialog implements Dialog
+abstract class AbstractDialog implements Dialog
 {
     /**
      * @var Character
