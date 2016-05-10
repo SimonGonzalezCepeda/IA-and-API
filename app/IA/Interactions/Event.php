@@ -6,10 +6,10 @@ namespace App;
 
 
 /**
- * Interface Events
+ * Interface Event
  * @package App
  */
-interface Events
+interface Event
 {
     /**
      * @param Condition $condition

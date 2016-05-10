@@ -12,7 +12,7 @@ namespace App;
  * Class AbstractDialog
  * @package App
  */
-abstract class AbstractDialog implements Dialog
+abstract class AbstractDialog extends GameEvent implements Dialog
 {
     /**
      * @var Character
@@ -26,16 +26,6 @@ abstract class AbstractDialog implements Dialog
      * @var Character
      */
     protected $commentators = [];
-    /**
-     * Used to controls and maybe a trophy system in the future.
-     * @var bool
-     */
-    protected $endFlag = false;
-    /**
-     * Used to controls and maybe a trophy system in the future.
-     * @var bool
-     */
-    protected $startedFlag = false;
     /**
      * This will be the file that will be loaded.
      * @var
@@ -54,6 +44,33 @@ abstract class AbstractDialog implements Dialog
         $this->transmiter = $transmiter;
         $this->content = $content;
     }
+    /**
+     * @param array $choices
+     */
+    public function interaction($choices)
+    {
+        // TODO: Implement interaction() method.
+    }
+
+    /**
+     * A method to indicate that the dialeg started,
+     * @param Startable $startable
+     */
+    public function start(Startable $startable)
+    {
+        $this->startedFlag = true;
+    }
+
+    /**
+     *  A method called to save the current point on the dialeg. Maybe refaction sooner.
+     */
+    public function memorizeLine()
+    {
+        if($this->startedFlag){
+            //TODO: Codi per a desar el dialog que portem llegit.
+        }
+    }
+
     /**
      * @param Character $transmiter
      * @return $this
@@ -86,45 +103,5 @@ abstract class AbstractDialog implements Dialog
             $this->commentators = $commentators;
         }
         return $this;
-    }
-    /**
-     * @param array $choices
-     */
-    public function interaction($choices)
-    {
-        // TODO: Implement interaction() method.
-    }
-    /**
-     * @return mixes
-     */
-    public function results()
-    {
-        // TODO: Implement results() method.
-    }
-
-    /**
-     *  A method to indicate that its over the dialeg.
-     */
-    public function end()
-    {
-        $this->endFlag = true;
-    }
-
-    /**
-     *  A method to indicate that the dialeg started,
-     */
-    public function start()
-    {
-        $this->startedFlag = true;
-    }
-
-    /**
-     *  A method called to save the current point on the dialeg. Maybe refaction sooner.
-     */
-    public function memorizeLine()
-    {
-        if($this->startedFlag){
-            //TODO: Codi per a desar el dialog que portem llegit.
-        }
     }
 }

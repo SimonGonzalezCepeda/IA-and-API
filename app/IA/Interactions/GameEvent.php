@@ -5,26 +5,29 @@ namespace App;
 
 
 /**This class its meant to put tha basses of all kind of events in the game, they could be
- * Events inside the GAME or triggers and other actions that are events inside the CODE.
+ * Event inside the GAME or triggers and other actions that are events inside the CODE.
  * Class GameEvent
  * @package App
  */
-abstract class GameEvent implements Events
+abstract class GameEvent implements Event
 {
     /**This variable mark if the game has been started.
      * @var bool
      */
     protected $startFlag = false;
+
     /**This variable mark if the events has been completed.
      * @var bool
      */
     protected $endFlag = false;
+
     /**
      * This variable its meant to be used by any class that implements Startable. This
      * let us the posibility to use it for a condition or to call something from the start method.
      * @var Startable
      */
     protected $startable;
+
     /**
      * We listen if a condition has been acomplished. If the event its on going,
      * we will call end($condition) function in order to see if it ends. If not
@@ -78,15 +81,6 @@ abstract class GameEvent implements Events
         if(!$this->startFlag)
             return $this->endFlag;
         return false;
-    }
-
-    /**
-     * Mark if the event has started
-     * @param Startable $startable
-     */
-    public function start(Startable $startable)
-    {
-        // TODO: Implement start() method.
     }
 
     /**
