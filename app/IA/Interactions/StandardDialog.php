@@ -4,7 +4,7 @@
 namespace App;
 
 
-class StandardDialog extends AbstractDialog
+class StandardDialog extends AbstractDialog implements Startable
 {
 
     /**

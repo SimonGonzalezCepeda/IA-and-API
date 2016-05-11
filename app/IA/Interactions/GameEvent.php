@@ -11,6 +11,12 @@ namespace App;
  */
 abstract class GameEvent implements Event
 {
+    /**
+     * The current name of the event.
+     * @var string
+     *
+     */
+    protected $name;
     /**This variable mark if the game has been started.
      * @var bool
      */
@@ -56,7 +62,7 @@ abstract class GameEvent implements Event
      */
     protected function checkCondition(Condition $condition)
     {
-        if($condition->getCondition() == $condition->getValue())
+        if($condition->getComparator() == $condition->getValue())
             return true;
         return false;
     }

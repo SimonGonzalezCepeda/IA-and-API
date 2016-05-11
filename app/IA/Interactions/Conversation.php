@@ -11,16 +11,18 @@ class Conversation extends GameEvent implements Startable
 
     /**
      * Conversation constructor.
+     * @param string $name
      * @param Dialog $dialog
      * @param string $topic
      * @internal param Dialogs $dialogs
      */
-    public function __construct(Dialog $dialog, $topic)
+    public function __construct($name, Dialog $dialog, $topic)
     {
         if ($topic === null || $topic == null)
             $topic = "Default Topic";
         $this->topic = $topic;
         $this->dialogs = $dialog;
+        $this->name = $name;
     }
 
     /**
@@ -40,4 +42,18 @@ class Conversation extends GameEvent implements Startable
         $this->dialogs = [$dialog];
     }
 
+    /**
+     * @param Startable $startable
+     */
+    public function start(Startable $startable)
+    {
+        // TODO: Implement start() method.
+    }
 }
+
+$topic = "Love Declaration";
+$character = new Kakoi();
+$player = new Player();
+$dialog = new StandardDialog($character, $player);
+$conversation = new Conversation($dialog, $topic);
+$conversation->start();

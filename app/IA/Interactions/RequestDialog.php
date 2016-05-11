@@ -4,7 +4,7 @@
 namespace App;
 
 
-class RequestDialog extends AbstractDialog
+class RequestDialog extends AbstractDialog implements Startable
 {
     /**
      * RequestDialog constructor.
