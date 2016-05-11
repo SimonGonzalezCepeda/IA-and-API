@@ -58,7 +58,7 @@ abstract class AbstractDialog extends GameEvent implements Dialog
      */
     public function start(Startable $startable)
     {
-        $this->startedFlag = true;
+        $this->startFlag = true;
     }
 
     /**
@@ -66,7 +66,7 @@ abstract class AbstractDialog extends GameEvent implements Dialog
      */
     public function memorizeLine()
     {
-        if($this->startedFlag){
+        if($this->startFlag){
             //TODO: Codi per a desar el dialog que portem llegit.
         }
     }
