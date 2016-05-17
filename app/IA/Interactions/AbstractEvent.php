@@ -20,13 +20,6 @@ abstract class AbstractEvent extends GameEvent
         $this->conversations = $conversation;
     }
 
-    /**
-     * @return mixed
-     */
-    public function result()
-    {
-        // TODO: Implement result() method.
-    }
+    //TODO: I need to refactor this class.
 
-
-}
+ }

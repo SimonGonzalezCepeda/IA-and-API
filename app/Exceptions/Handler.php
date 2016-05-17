@@ -33,7 +33,13 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        parent::report($e);
+        switch($e){
+            case($e instanceof CallableHasANullCondition):
+                return $e->report();
+                break;
+            default:
+                parent::report($e);
+        }
     }
 
     /**

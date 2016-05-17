@@ -49,7 +49,7 @@ abstract class GameEvent implements Event
             return $this;
         }
         if($this->checkCondition($condition)) {
-            $this->start($this->startable);
+            $this->start($this->startable, $condition);
             return $this;
         }
         return null;

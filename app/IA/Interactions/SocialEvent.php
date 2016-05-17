@@ -3,7 +3,6 @@
 
 namespace App;
 
-
 /**
  * This is an Event that usually is ralated to social compromises and festivities.
  * Class SocialEvent
@@ -24,9 +23,9 @@ class SocialEvent extends GameEvent implements Startable
     /**
      * Its another word for event, this one refers to what will the actual event
      * should call or trigger. It can be a Event or a Conversation.
-     * @var Startable
+     * @var Startable array
      */
-    private $happening;
+    private $happening = [];
 
     /**
      * SocialEvent constructor.
@@ -39,7 +38,7 @@ class SocialEvent extends GameEvent implements Startable
     {
         $this->initialDate = $initialDate;
         $this->finalDate = $finalDate;
-        $this->happening = $happening;
+        $this->happening[] = $happening;
         $this->name = $name;
     }
 
@@ -65,11 +64,12 @@ class SocialEvent extends GameEvent implements Startable
      * events, that's why if an instance its call()ed it will trigger the listener.
      * @param Condition|null $condition
      * @return mix
+     * @throws CallableHasANullCondition
      */
     public function call(Condition $condition = null)
     {
-        if($condition === null)
+        if($condition != null)
             return $this->listener($condition);
-        return $exception = CallableNullConditionException::class;
+        throw new CallableHasANullCondition;
     }
 }
