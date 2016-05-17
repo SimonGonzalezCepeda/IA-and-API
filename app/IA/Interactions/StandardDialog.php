@@ -4,7 +4,7 @@
 namespace App;
 
 
-class StandardDialog extends AbstractDialog implements Startable
+class StandardDialog extends AbstractDialog
 {
 
     /**
@@ -16,5 +16,10 @@ class StandardDialog extends AbstractDialog implements Startable
     {
         $this->transmiter = $character;
         $this->receiver = $player;
+    }
+
+    public function call(Condition $condition = null)
+    {
+        // TODO: Implement call() method.
     }
 }

@@ -12,7 +12,7 @@ namespace App;
  * Class AbstractDialog
  * @package App
  */
-abstract class AbstractDialog extends GameEvent implements Dialog
+abstract class AbstractDialog extends GameEvent implements Dialog, Startable
 {
     /**
      * @var Character
@@ -55,8 +55,9 @@ abstract class AbstractDialog extends GameEvent implements Dialog
     /**
      * A method to indicate that the dialeg started,
      * @param Startable $startable
+     * @param Condition $condition
      */
-    public function start(Startable $startable)
+    public function start(Startable $startable, Condition $condition = null)
     {
         $this->startFlag = true;
     }

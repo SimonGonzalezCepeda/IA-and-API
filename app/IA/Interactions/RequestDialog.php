@@ -4,7 +4,7 @@
 namespace App;
 
 
-class RequestDialog extends AbstractDialog implements Startable
+class RequestDialog extends AbstractDialog
 {
     /**
      * RequestDialog constructor.
@@ -17,4 +17,8 @@ class RequestDialog extends AbstractDialog implements Startable
         $this->receiver = $character;
     }
 
+    public function call(Condition $condition = null)
+    {
+        // TODO: Implement call() method.
+    }
 }
