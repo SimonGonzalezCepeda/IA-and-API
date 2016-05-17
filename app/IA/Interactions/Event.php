@@ -18,9 +18,13 @@ interface Event
     public function listener(Condition $condition);
 
     /**
+     * We need a condition in order to do call($condition) that its usually called
+     * from this method.
      * @param Startable $startable
+     * @param Condition $condition
+     * @return
      */
-    public function start(Startable $startable);
+    public function start(Startable $startable, Condition $condition = null);
 
     /**
      * This function has meant to end two type of events, one that is general and

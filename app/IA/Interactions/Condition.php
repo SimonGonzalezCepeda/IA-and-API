@@ -9,7 +9,7 @@ namespace App;
  * Class Condition
  * @package App
  */
-class Condition implements Startable
+class Condition
 {
     /**
      * This variable can be almost any parameter of the game, it could be the day, a week
