@@ -43,7 +43,6 @@ abstract class GameEvent implements Event
      */
     public function listener(Condition $condition)
     {
-        // TODO: Implement listener() method.
         if($this->itsOnGoing()) {
             $this->end($condition);
             return $this;
@@ -128,6 +127,5 @@ abstract class GameEvent implements Event
     {
         // TODO: Implement result() method.
         $character->comParameter($parameter, $value);
-
     }
 }
