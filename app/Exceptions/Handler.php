@@ -34,7 +34,7 @@ class Handler extends ExceptionHandler
     public function report(Exception $e)
     {
         switch($e){
-            case($e instanceof CallableHasANullCondition):
+            case($e instanceof FunctionHasANullCondition):
                 return $e->report();
                 break;
             default:
