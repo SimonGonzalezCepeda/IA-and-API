@@ -39,9 +39,8 @@ interface Event
      * This function has the responsability to aplied the changes of every result in
      * the current game.
      * @param Character $character
-     * @param $parameter
-     * @param $value
+     * @param Consequence $consequence
      * @return mixed
      */
-    public function result($character, $parameter, $value);
+    public function result(Character $character, Consequence $consequence);
 }

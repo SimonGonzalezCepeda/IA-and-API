@@ -3,10 +3,20 @@
 
 namespace App;
 
-
+use App\Exceptions\FunctionHasANullCondition;
+/**
+ * Class Conversation
+ * @package App
+ */
 class Conversation extends GameEvent implements Startable
 {
+    /**
+     * @var array
+     */
     private $dialogs = [];
+    /**
+     * @var string
+     */
     private $topic;
 
     /**
@@ -21,34 +31,56 @@ class Conversation extends GameEvent implements Startable
         if ($topic === null || $topic == null)
             $topic = "Default Topic";
         $this->topic = $topic;
-        $this->dialogs = $dialog;
+        $this->dialogs[] = $dialog;
         $this->name = $name;
     }
 
     /**
+     * To get all the dialogs.
      * @return Dialog
      */
-    public function getDialogs()
+    public function getAllDialogs()
     {
         return $this->dialogs;
     }
 
     /**
-     * @param Dialog $dialog
-     * @internal param array $dialogs
+     * To get only one dialog using its index.
+     * @param integer $index
+     * @return mixed
      */
-    public function setDialogs(Dialog $dialog)
+    public function getOneDialog($index)
     {
-        $this->dialogs = [$dialog];
+        return $this->dialogs[$index];
     }
 
     /**
-     * @param Startable $startable
-     * @param Condition $condition
+     * To add a dialog to the current array,
+     * @param Dialog $dialog
+     * @internal param array $dialogs
      */
-    public function start(Startable $startable, Condition $condition = null)
+    public function addDialog(Dialog $dialog)
     {
-        // TODO: Implement start() method.
+        $this->dialogs[] = $dialog;
+    }
+
+    /**
+     * In this case the second parameter can't be null and the Startable instance,
+     * a dialeg.
+     * @param Startable $dialog
+     * @param Condition $condition
+     * @return Dialog $dialog
+     * @throws FunctionHasANullCondition
+     */
+    public function start(Startable $dialog, Condition $condition = null)
+    {
+        if($condition != null)
+            if($dialog instanceof Dialog)
+            {
+                $this->startFlag = true;
+                return $dialog->call($condition);
+            }
+        throw new FunctionHasANullCondition;
     }
 
     public function call(Condition $condition = null)

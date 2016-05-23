@@ -12,9 +12,13 @@ namespace App;
 abstract class GameEvent implements Event
 {
     /**
+     * Here we will save what will be
+     * @var Consequence
+     */
+    protected $consequence;
+    /**
      * The current name of the event.
      * @var string
-     *
      */
     protected $name;
     /**This variable mark if the game has been started.
@@ -119,13 +123,19 @@ abstract class GameEvent implements Event
      * This function has the responsability to aplied the changes of every result in
      * the current game.
      * @param Character $character
-     * @param $parameter
-     * @param $value
+     * @param Consequence $consequence
      * @return mixed
      */
-    public function result($character, $parameter, $value)
+    public function result(Character $character, Consequence $consequence)
     {
         // TODO: Implement result() method.
-        $character->comParameter($parameter, $value);
+        foreach($consequence->getResult() as $index){
+            $index = $index + 1;
+            $character->comParameter(
+                key($consequence->getExperience($index)),
+                $consequence->getExperience($index)->value());
+        }
+        unset($index);
+//        $character->comParameter($parameter, $value);
     }
 }

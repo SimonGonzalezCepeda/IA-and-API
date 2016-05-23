@@ -4,6 +4,12 @@
 namespace App;
 
 
+use App\Exceptions\FunctionHasANullCondition;
+
+/**
+ * Class AbstractEvent
+ * @package App
+ */
 abstract class AbstractEvent extends GameEvent
 {
     /**
@@ -14,19 +20,21 @@ abstract class AbstractEvent extends GameEvent
     protected $happening = [];
 
     /**
-     * We need a condition in order to do the call, that can have a condition.
+     * If what are you trying to start its a
      * @param Startable $happening
      * @param Condition $condition
      * @return $this
      */
     public function start(Startable $happening, Condition $condition = null)
     {
-        // TODO: Implement start() method.
-        $this->startFlag = true;
-        if($condition != null)
+        if($condition != null) {
+            $this->startFlag = true;
             return $happening->call($condition);
-        if($condition === null)
+        }
+        if($condition === null) {
+            $this->startFlag = true;
             return $this;
+        }
     }
 
     /**
@@ -34,13 +42,42 @@ abstract class AbstractEvent extends GameEvent
      * must be callable". In this case, a in game events can have many others events,
      * that's why if an instance its call()ed it will trigger the listener.
      * @param Condition|null $condition
-     * @return mix
-     * @throws CallableHasANullCondition
+     * @return AbstractEvent
+     * @throws FunctionHasANullCondition
      */
     public function call(Condition $condition = null)
     {
+        //TODO; El paràmetre que paso genera un bucle infinit, he de buscar una forma de separar el call y el listener.
         if($condition != null)
             return $this->listener($condition);
-        throw new CallableHasANullCondition;
+        throw new FunctionHasANullCondition;
+    }
+
+    /**
+     * To add an Event to the array.
+     * @param Startable $happening
+     */
+    public function addEvent(Startable $happening)
+    {
+        $this->happening[] = $happening;
+    }
+
+    /**
+     * To get all the Events in an array.
+     * @return Startable
+     */
+    public function getAllEvents()
+    {
+        return $this->happening;
+    }
+
+    /**
+     * To get one event only.
+     * @param int $index
+     * @return mixed
+     */
+    public function getOneEvent($index)
+    {
+        return $this->happening[$index];
     }
  }
