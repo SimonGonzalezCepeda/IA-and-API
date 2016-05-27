@@ -131,9 +131,10 @@ abstract class GameEvent implements Event
         // TODO: Implement result() method.
         foreach($consequence->getResult() as $index){
             $index = $index + 1;
+            $key = key($consequence->getExperience($index));
+            $value = $consequence->getExperience($index)->value;
             $character->comParameter(
-                key($consequence->getExperience($index)),
-                $consequence->getExperience($index)->value());
+                $key, $value);
         }
         unset($index);
 //        $character->comParameter($parameter, $value);
